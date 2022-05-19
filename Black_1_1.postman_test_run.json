@@ -1,0 +1,76 @@
+{
+	"id": "8fb5e5b3-2949-4c9c-8fa4-8a5cb5564874",
+	"name": "Black_1****",
+	"timestamp": "2022-05-19T10:05:29.182Z",
+	"collection_id": "19192182-a7b957ee-535d-47cd-979e-c5fd4fe8879a",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 2,
+	"totalFail": 6,
+	"results": [
+		{
+			"id": "277284c5-55ad-42a7-b7e3-6bca95bf3266",
+			"name": "New Request",
+			"time": 487,
+			"responseCode": {
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 2,
+					"fail": 6
+				}
+			},
+			"times": [
+				381,
+				267,
+				229,
+				242,
+				242,
+				221,
+				350,
+				487
+			],
+			"allTests": [
+				{
+					"Status code is 200": false
+				},
+				{
+					"Status code is 200": false
+				},
+				{
+					"Status code is 200": false
+				},
+				{
+					"Status code is 200": false
+				},
+				{
+					"Status code is 200": false
+				},
+				{
+					"Status code is 200": false
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 8,
+	"totalTime": 2419,
+	"collection": {
+		"requests": [
+			{
+				"id": "277284c5-55ad-42a7-b7e3-6bca95bf3266",
+				"method": "POST"
+			}
+		]
+	}
+}

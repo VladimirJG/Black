@@ -1,0 +1,853 @@
+{
+	"info": {
+		"_postman_id": "8981c256-3eea-43c8-ba24-3becb6552e45",
+		"name": "Black",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1",
+			"item": [
+				{
+					"name": "Positive",
+					"item": [
+						{
+							"name": "1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"disabled": true
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Negative",
+					"item": [
+						{
+							"name": "Without parameters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Without parameter name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "name_2_symbol",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "VD",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Without parameter age",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "age without meaning",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "age 17",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "17",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "age 121",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "121",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "age text",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "text",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "age $10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "$10",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Without parameter salary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "5000",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salary 0",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salary 1000001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "2000001",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salary text",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "prompt",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salary Special symbols",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Vladimir",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "36",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "*&^%$;",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://162.55.220.72:5005/user_info_2",
+									"protocol": "http",
+									"host": [
+										"162",
+										"55",
+										"220",
+										"72"
+									],
+									"port": "5005",
+									"path": [
+										"user_info_2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
