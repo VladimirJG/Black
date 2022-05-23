@@ -93,7 +93,7 @@ const getDeptartments = function(companies) {
 }
 getDeptartments(enterprises);
 
-console.log(getDeptartments)
+/* console.log(getDeptartments) */
 
 /* 2. Написать функцию, которая будет принимать 1 аргумент
  (id отдела или название отдела и возвращать название 
@@ -113,9 +113,38 @@ const getEnterpriseByDepartment = function(val) {
     return enterprise ? enterprise : 'Нет организации с таким отделом'
 }
 
-console.log(getEnterpriseByDepartment('5'))
-    /* 3. Написать функцию, которая будет добавлять предприятие. 
-    В качестве аргумента принимает название предприятия */
+/* console.log(getEnterpriseByDepartment(2)) */
+/* 3. Написать функцию, которая будет добавлять предприятие. 
+В качестве аргумента принимает название предприятия */
+
+// проверка всего массива на количество объектов и добавление нового id
+const getNewId = function(company) {
+        let maxId = company[0].id
+        company.forEach((el) => {
+            if (maxId < el.id) {
+                maxId = el.id
+            }
+            if (el.departments) {
+                el.departments.forEach((elem) => {
+                    if (maxId < elem.id) {
+                        maxId = elem.id
+                    }
+                })
+            }
+        })
+        return maxId + 1
+    }
+    //Теперь основное
+
+const addEnterprise = function(name) {
+    enterprises.push({
+        id: getNewId(enterprises),
+        name: name,
+        departments: []
+    })
+}
+addEnterprise('Компьютеры')
+console.log(enterprises)
 
 
 /* 
