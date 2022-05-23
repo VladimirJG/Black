@@ -249,3 +249,16 @@ let deleteDepartment = function(id) {
 В качестве аргумента принимает два значения: id отдела, 
 из которого будут переноситься сотрудники и id отдела, 
 в который будут переноситься сотрудники). */
+
+
+const transferEmployees = function(currentId, newId) {
+    let currentDepartment = getDepartment(currentId);
+    let newDepartment = getDepartment(newId)
+    if (typeof currentDepartment == 'object' && typeof newDepartment == 'object') {
+        newDepartment.employees_count += currentDepartment.employees_count;
+        currentDepartment.employees_count = 0
+    } else console.log('Нет такого отдела')
+}
+
+/* transferEmployees(13, 12)
+console.log(getEnterprise(11)) */
