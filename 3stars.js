@@ -61,6 +61,8 @@ const enterprises = [{
 Рядом указать количество сотрудников. 
 Для предприятия посчитать сумму всех сотрудников 
 во всех отделах. */
+
+//проставить склонение к номерам
 const employeesCountHelper = function(number) {
     number = number.toString().split('').pop()
     if (number) {
@@ -97,10 +99,23 @@ console.log(getDeptartments)
  (id отдела или название отдела и возвращать название 
     предприятия, к которому относится). */
 
+const getEnterpriseByDepartment = function(val) {
+    let enterprise
+    enterprises.forEach(ent => {
+        let department
+        if (ent.departments) {
+            department = ent.departments.find(dept => { return dept.id == val || dept.name == val })
+        }
+        if (department) {
+            enterprise = ent;
+        }
+    })
+    return enterprise ? enterprise : 'Нет организации с таким отделом'
+}
 
-
-/* 3. Написать функцию, которая будет добавлять предприятие. 
-В качестве аргумента принимает название предприятия */
+console.log(getEnterpriseByDepartment('5'))
+    /* 3. Написать функцию, которая будет добавлять предприятие. 
+    В качестве аргумента принимает название предприятия */
 
 
 /* 
