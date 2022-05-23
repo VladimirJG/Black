@@ -181,6 +181,14 @@ console.log(getEnterprise(11))
 Принимает в качестве аргумента id предприятия и новое имя 
 предприятия. */
 
+const editEnterprise = function(val, name) {
+    const enterprise = getEnterprise(val)
+    if (typeof enterprise === 'object') {
+        enterprise.name = name;
+    } else console.log(enterprise)
+}
+editEnterprise(11, 'Тестировщики')
+console.log(getEnterprise(11))
 
 
 /* 6. Написать функцию для редактирования названия отдела. 
