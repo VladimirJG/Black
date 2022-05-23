@@ -193,7 +193,29 @@ console.log(getEnterprise(11))
 
 /* 6. Написать функцию для редактирования названия отдела. 
 Принимает в качестве аргумента id отдела и новое имя отдела. */
+// Helper
 
+const getDepartment = function(val) {
+    let department;
+    enterprises.forEach((company) => {
+        const dept = company.departments.find((el) => {
+            return el.id == val || el.name == val;
+        })
+        if (dept) department = dept;
+    });
+    return department ? department : 'Нет такого ответа'
+}
+
+//сам код
+
+const editDepartment = function(val, name) {
+    const department = getDepartment(val)
+    if (typeof department == 'object') {
+        department.name = name
+    } else console.log(department)
+}
+editDepartment(12, 'Автотестеры')
+console.log(getEnterprise(11))
 
 
 /* 7. Написать функцию для удаления предприятия. 
