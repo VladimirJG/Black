@@ -221,12 +221,19 @@ console.log(getEnterprise(11))
 /* 7. Написать функцию для удаления предприятия. 
 В качестве аргумента принимает id предприятия. */
 
-
+const deleteEnterpise = function(id) {
+    enterprises.forEach((enterprise, index) => {
+        if (enterprise.id === id) {
+            enterprises.splice(index, 1)
+        }
+    })
+}
 
 /* 8. Написать функцию для удаления отдела. 
 В качестве аргумента принимает id отдела. 
 Удалить отдел можно только, если в нем нет сотрудников. */
 
+let deleteDepartment
 
 /* 9. Написать функцию для переноса сотрудников между 
 отделами одного предприятия. 
