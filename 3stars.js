@@ -233,7 +233,16 @@ const deleteEnterpise = function(id) {
 В качестве аргумента принимает id отдела. 
 Удалить отдел можно только, если в нем нет сотрудников. */
 
-let deleteDepartment
+let deleteDepartment = function(id) {
+        enterprises.forEach(e => {
+            let index = e.departments.findIndex(d => d.id === id && d.employees_count === 0);
+            if (index !== -1) {
+                e.departments.splice(index, 1);
+            }
+        })
+    }
+    /* deleteDepartment (10)
+    console.log(enterprises) */
 
 /* 9. Написать функцию для переноса сотрудников между 
 отделами одного предприятия. 
