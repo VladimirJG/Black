@@ -155,9 +155,26 @@ console.log(enterprises)
 //предусловие написать хелпер который по id находит организацию и возвращает ее в объект
 
 const getEnterprise = function(val) {
-    let enterprise = enterprises.find(el => el.id == val || el.name == val)
-    return enterprise ? enterprise : 'Нет такой организации'
+        let enterprise = enterprises.find(el => el.id == val || el.name == val)
+        return enterprise ? enterprise : 'Нет такой организации'
+    }
+    // основное
+
+const addDepartment = function(id, name, employees_count = 0) {
+    const enterprise = getEnterprise(id)
+    if (typeof enterprise == 'object') {
+        enterprise.departments.push({
+            id: getNewId(enterprises),
+            name: name,
+            employees_count: employees_count
+        })
+    } else console.log('Нет такой организации')
 }
+addDepartment(11, "AQA", 20)
+addDepartment(11, "Manual", 20)
+
+console.log(getEnterprise(11))
+
 
 /* 
 5. Написать функцию для редактирования названия предприятия. 
