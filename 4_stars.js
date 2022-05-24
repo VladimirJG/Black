@@ -89,3 +89,27 @@ const company = [{
 ------ Подраздел менеджмента 2 (10)
 ---- HR (1)
 */
+
+
+const checkArray = function(company, counter = "") {
+    company.forEach((comp) => {
+        console.log(`${counter}${counter === "" ? "" : " "}${comp.name} (${comp.users_count})`);
+        if (comp.children) {
+            counter += "--";
+            checkArray(comp.children, counter);
+            counter = counter.slice(0, -2);
+        }
+    });
+};
+checkArray(company)
+console.log('================================')
+
+//решение 2
+
+const format = (children, i = 2, pre = ' ', pre_1 = ' ') => children.map(({ name, users_count, children }) => {
+            //recursive call
+            if (Array.isArray(children)) return `${pre}${name}${pre_1}${users_count}\n${format(children, i, `${pre || '|'}${'-'.repeat(i)}`)}`
+            return `${pre}${name}${pre_1}${users_count}`
+}).join('\n')
+console.log(format(company))
+console.log('================================')
