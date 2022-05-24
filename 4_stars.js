@@ -113,3 +113,19 @@ const format = (children, i = 2, pre = ' ', pre_1 = ' ') => children.map(({ name
 }).join('\n')
 console.log(format(company))
 console.log('================================')
+
+//решение 3
+let a = ""
+let res = ""
+const getFun = function(tr,a)
+{
+    res += a + `${tr.name}(${tr.users_count})\n`;
+    if(!tr.children)
+    return `${tr.name}(${tr.users_count})\n`;
+    for (let i=0; i < tr.children.length; i++ ) {
+        getFun(tr.children[i], a +"--");
+    }
+    return res;
+}
+console.log(getFun(company[0], a))
+console.log('============================')
